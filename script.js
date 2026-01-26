@@ -1,12 +1,11 @@
 const links = document.querySelectorAll(".nav a");
-const path = window.location.pathname;
+const currentPath = window.location.pathname.split("/").filter(Boolean).pop();
 
 links.forEach(link => {
-  const href = link.getAttribute("href");
-
+  const linkPath = link.getAttribute("href").replace("/", "");
   if (
-    href === "./" && path.endsWith("/") ||
-    href !== "./" && path.includes(href)
+    linkPath === "" && currentPath === undefined ||
+    linkPath === currentPath
   ) {
     link.classList.add("active");
   }
