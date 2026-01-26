@@ -1,0 +1,128 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body{
+  background:#f2f6fb;
+}
+
+.layout{
+  display:flex;
+  min-height:100vh;
+}
+
+/* Sidebar */
+.sidebar{
+  width:240px;
+  background:#0b1c2d;
+  color:white;
+  padding:30px 20px;
+  position:fixed;
+  height:100vh;
+}
+
+.sidebar h2{
+  text-align:center;
+  margin-bottom:30px;
+  letter-spacing:1px;
+}
+
+.sidebar ul{
+  list-style:none;
+}
+
+.sidebar ul li{
+  margin:15px 0;
+}
+
+.sidebar ul li a{
+  color:white;
+  text-decoration:none;
+  font-size:16px;
+  padding:10px;
+  display:block;
+  border-radius:6px;
+  transition:0.3s;
+}
+
+.sidebar ul li a:hover{
+  background:#1f3a5f;
+}
+
+/* Content */
+.content{
+  margin-left:240px;
+  padding:40px;
+  width:100%;
+}
+
+.section{
+  margin-bottom:80px;
+}
+
+.section h1{
+  font-size:36px;
+  margin-bottom:10px;
+}
+
+.section h2{
+  font-size:28px;
+  margin-bottom:20px;
+}
+
+.tagline{
+  font-size:18px;
+  color:#555;
+  margin-bottom:25px;
+}
+
+.about-box{
+  background:white;
+  padding:25px;
+  border-radius:12px;
+  box-shadow:0 0 10px rgba(0,0,0,0.05);
+}
+
+/* Cards */
+.card{
+  background:white;
+  padding:15px;
+  margin:10px 0;
+  border-radius:8px;
+  box-shadow:0 0 6px rgba(0,0,0,0.05);
+}
+
+/* Notes */
+.notes-list{
+  display:flex;
+  flex-direction:column;
+}
+
+.notes-list a{
+  background:white;
+  margin:8px 0;
+  padding:12px;
+  border-radius:6px;
+  text-decoration:none;
+  color:#222;
+  box-shadow:0 0 6px rgba(0,0,0,0.05);
+  transition:0.3s;
+}
+
+.notes-list a:hover{
+  background:#e6f0ff;
+}
+
+/* Archives */
+.archive-list{
+  background:white;
+  padding:20px;
+  border-radius:10px;
+}
+
+.archive-list li{
+  margin:10px 0;
+}
