@@ -3,33 +3,60 @@
 <head>
   <meta charset="UTF-8">
 
-  <!-- ✅ REQUIRED -->
+  <!-- REQUIRED FOR MOBILE -->
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
   <title>Notes – CASA</title>
-  <link rel="stylesheet" href="../style.css?v=2">
+  <link rel="stylesheet" href="../style.css?v=4">
 </head>
 <body>
 
+<!-- ✅ NAVIGATION — SAME AS LATEST VERSION -->
 <nav class="nav">
   <div class="nav-title">CASA</div>
   <a href="../">Home</a>
   <a href="../upcoming-events/">Upcoming Events</a>
-  <a href="../notes/">Notes</a>
+  <a href="../notes/" class="active">Notes</a>
   <a href="../archives/">Archives</a>
 </nav>
 
+<!-- ✅ MAIN CONTENT -->
 <main class="content">
   <h1>Notes</h1>
-  <p class="tagline">Centralized academic resources</p>
+  <p class="tagline">
+    Centralized academic resources for CO & AN students
+  </p>
 
-  <div class="card">
+  <!-- Semester-wise -->
+  <div class="card" style="margin-bottom: 25px;">
+    <h2>📘 Semester-wise Notes</h2>
     <p>
-      Subject-wise and semester-wise notes will be uploaded here
-      for easy student access.
+      Notes organized semester-wise to help students quickly access
+      material relevant to their current curriculum.
     </p>
-    <p><strong>Coming Soon.</strong></p>
+    <p><strong>Status:</strong> Coming Soon</p>
   </div>
+
+  <!-- Subject-wise -->
+  <div class="card" style="margin-bottom: 25px;">
+    <h2>📗 Subject-wise Notes</h2>
+    <p>
+      Subject-wise notes for focused revision, curated by faculty
+      and CASA members.
+    </p>
+    <p><strong>Status:</strong> Coming Soon</p>
+  </div>
+
+  <!-- General Resources -->
+  <div class="card">
+    <h2>📙 General Resources</h2>
+    <p>
+      Reference materials, guides, and important academic documents
+      useful across semesters.
+    </p>
+    <p><strong>Status:</strong> Coming Soon</p>
+  </div>
+
 </main>
 
 <script src="../script.js"></script>
