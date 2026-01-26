@@ -6,45 +6,72 @@
 }
 
 body {
-  background: #f2f6fb;
+  background: linear-gradient(180deg, #eef4fb, #f8fafc);
   color: #1f2933;
 }
 
-/* NAVIGATION */
+/* =========================
+   NAVIGATION
+   ========================= */
+
 .nav {
-  background: linear-gradient(180deg, #0b1c2d, #112b45);
+  background: linear-gradient(180deg, #0b1c2d, #143a5e);
   color: white;
   display: flex;
   flex-direction: column;
-  padding: 25px 20px;
+  padding: 30px 20px;
   width: 260px;
   height: 100vh;
   position: fixed;
+
+  /* depth */
+  box-shadow: 6px 0 25px rgba(0, 0, 0, 0.25);
 }
 
 .nav-title {
-  font-size: 22px;
+  font-size: 24px;
+  font-weight: 700;
   text-align: center;
-  margin-bottom: 35px;
-  letter-spacing: 1px;
+  margin-bottom: 40px;
+  letter-spacing: 1.5px;
+  color: #e0f2fe;
 }
 
+/* nav links */
 .nav a {
+  position: relative;
   color: #dbeafe;
   text-decoration: none;
-  padding: 12px 16px;
-  border-radius: 10px;
-  margin-bottom: 12px;
-  transition: 0.3s;
+  padding: 14px 18px;
+  border-radius: 14px;
+  margin-bottom: 14px;
+  font-size: 16px;
+
+  background: rgba(255, 255, 255, 0.06);
+  backdrop-filter: blur(6px);
+
+  transition: all 0.25s ease;
 }
 
-.nav a:hover,
-.nav a.active {
+/* hover effect */
+.nav a:hover {
   background: rgba(255, 255, 255, 0.18);
-  color: white;
+  transform: translateX(4px);
+  box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
 }
 
-/* CONTENT */
+/* active page */
+.nav a.active {
+  background: linear-gradient(135deg, #38bdf8, #0ea5e9);
+  color: #0b1c2d;
+  font-weight: 600;
+  box-shadow: 0 10px 25px rgba(56, 189, 248, 0.45);
+}
+
+/* =========================
+   CONTENT
+   ========================= */
+
 .content {
   margin-left: 260px;
   padding: 60px;
@@ -64,13 +91,15 @@ h1 {
 
 .card {
   background: white;
-  padding: 32px;
-  border-radius: 18px;
-  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.08);
+  padding: 34px;
+  border-radius: 20px;
+  box-shadow:
+    0 10px 25px rgba(0, 0, 0, 0.08),
+    inset 0 1px 0 rgba(255, 255, 255, 0.6);
 }
 
 .card h2 {
-  margin-bottom: 15px;
+  margin-bottom: 16px;
 }
 
 .card p {
@@ -79,7 +108,10 @@ h1 {
   color: #334155;
 }
 
-/* MOBILE LAYOUT */
+/* =========================
+   MOBILE LAYOUT
+   ========================= */
+
 @media (max-width: 900px) {
   .nav {
     position: static;
@@ -87,22 +119,31 @@ h1 {
     height: auto;
     flex-direction: row;
     flex-wrap: wrap;
-    align-items: center;
     justify-content: center;
+    padding: 20px 14px;
+
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.25);
   }
 
   .nav-title {
     width: 100%;
-    margin-bottom: 15px;
+    margin-bottom: 18px;
+    font-size: 22px;
   }
 
   .nav a {
     margin: 6px;
+    padding: 12px 16px;
+    transform: none;
+  }
+
+  .nav a:hover {
+    transform: none;
   }
 
   .content {
     margin-left: 0;
-    padding: 35px 20px;
+    padding: 36px 20px;
   }
 
   h1 {
