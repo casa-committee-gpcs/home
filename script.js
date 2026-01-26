@@ -1,28 +1,30 @@
-// Select all nav links
-const links = document.querySelectorAll(".nav a");
+document.addEventListener("DOMContentLoaded", function () {
 
-// Get current page path
-let path = window.location.pathname;
+  // Select ALL navigation links from sidebar and top nav
+  const navLinks = document.querySelectorAll(
+    ".sidebar a, .top-nav a, header a"
+  );
 
-// Remove trailing slash if present
-if (path.endsWith("/")) path = path.slice(0, -1);
+  let currentPath = window.location.pathname;
 
-// Extract last segment of the path
-let currentPage = path.split("/").pop();
-
-// Special case for home page
-if (currentPage === "" || currentPage === "index.html") {
-  currentPage = "./";
-}
-
-// Add 'active' class to the matching link
-links.forEach(link => {
-  let href = link.getAttribute("href");
-
-  // Remove trailing slash for comparison
-  if (href.endsWith("/")) href = href.slice(0, -1);
-
-  if (href === currentPage) {
-    link.classList.add("active");
+  // Normalize path (important for GitHub Pages)
+  if (!currentPath.endsWith("/")) {
+    currentPath += "/";
   }
+
+  navLinks.forEach(link => {
+    let linkPath = new URL(link.href).pathname;
+
+    if (!linkPath.endsWith("/")) {
+      linkPath += "/";
+    }
+
+    // Clear previous state
+    link.classList.remove("active");
+
+    // Exact match
+    if (linkPath === currentPath) {
+      link.classList.add("active");
+    }
+  });
 });
