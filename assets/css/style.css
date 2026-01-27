@@ -95,11 +95,16 @@ body {
 
 .sidebar {
   width: 240px;
-  padding: 22px 18px;
   background:
     linear-gradient(180deg, #002e6e, #001f4d);
   position: relative;
   overflow: hidden;
+}
+
+.sidebar-inner{
+   padding: 22px 18px;
+   position: relative;
+   z-index: 1;
 }
 
 .sidebar::before {
