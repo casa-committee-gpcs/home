@@ -1,0 +1,73 @@
+.archives {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.archive-card {
+  border-radius: 20px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.archive-header {
+  padding: 22px 28px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  transition: all 0.35s ease;
+}
+
+.archive-card.active .archive-header {
+  background: linear-gradient(135deg, #dbeaff, #f5f9ff);
+  box-shadow: 0 20px 55px rgba(0,80,200,0.25);
+}
+
+.archive-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease, padding 0.4s ease;
+  padding: 0 28px;
+  background: rgba(240,247,255,0.85);
+}
+
+.archive-card.active .archive-content {
+  padding: 26px 28px 30px;
+  max-height: 1200px;
+}
+
+.archive-content ul {
+  list-style: none;
+}
+
+.archive-content li {
+  margin-bottom: 12px;
+}
+
+.archive-content a {
+  text-decoration: none;
+  color: #003366;
+  font-weight: 500;
+}
+
+.archive-content.history h4 {
+  margin: 20px 0 10px;
+  color: #003366;
+}
+
+.archive-content.history img {
+  width: 100%;
+  border-radius: 16px;
+  margin-bottom: 16px;
+  box-shadow: 0 14px 40px rgba(0,0,0,0.18);
+}
+
+/* MOBILE REFINEMENTS */
+@media (max-width: 768px) {
+  .archive-header {
+    font-size: 1.05rem;
+  }
+}
