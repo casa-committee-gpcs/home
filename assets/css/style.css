@@ -158,4 +158,57 @@ body {
     inset 0 1px 0 rgba(255,255,255,0.7);
 }
 
-.card h2
+.card h2 {
+  margin-bottom: 14px;
+  color: #003366;
+}
+
+.card p {
+  line-height: 1.6;
+  color: #374151;
+}
+
+/* =====================
+   COMING SOON STYLE
+===================== */
+
+.coming-soon {
+  text-align: center;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* =====================
+   MOBILE REFINEMENT
+===================== */
+
+@media (max-width: 768px) {
+
+  .layout {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 12px;
+  }
+
+  .sidebar a {
+    padding: 10px 14px;
+    transform: none;
+  }
+
+  .sidebar a.active {
+    transform: none;
+  }
+
+  .content {
+    padding: 22px;
+  }
+
+  .site-title {
+    font-size: 1.1rem;
+  }
+}
