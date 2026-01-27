@@ -1,5 +1,5 @@
 /* =====================
-   GLOBAL RESET & BASE
+   BASE RESET
 ===================== */
 
 * {
@@ -10,13 +10,16 @@
 }
 
 body {
-  background: linear-gradient(135deg, #eef3fb, #f8fbff);
+  background:
+    radial-gradient(circle at top left, #eef5ff, transparent 60%),
+    radial-gradient(circle at bottom right, #dde9ff, transparent 55%),
+    linear-gradient(135deg, #f5f9ff, #edf3ff);
   color: #1f2933;
   overflow-x: hidden;
 }
 
 /* =====================
-   HEADER (ALIVE TINT)
+   HEADER (VISIBLE LIFE)
 ===================== */
 
 .top-header {
@@ -27,18 +30,18 @@ body {
   background: linear-gradient(
     270deg,
     #ffffff,
-    #f0f6ff,
+    #eaf2ff,
     #ffffff
   );
-  background-size: 600% 600%;
-  animation: headerFlow 12s ease infinite;
-  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  background-size: 500% 500%;
+  animation: headerPulse 8s ease-in-out infinite;
+  box-shadow: 0 6px 22px rgba(0, 60, 150, 0.15);
   position: sticky;
   top: 0;
   z-index: 100;
 }
 
-@keyframes headerFlow {
+@keyframes headerPulse {
   0% { background-position: 0% 50%; }
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
@@ -52,7 +55,7 @@ body {
   font-size: 1.35rem;
   font-weight: 600;
   color: #003366;
-  letter-spacing: 0.3px;
+  letter-spacing: 0.4px;
 }
 
 /* =====================
@@ -65,12 +68,12 @@ body {
 }
 
 /* =====================
-   SIDEBAR (SUBTLE LIFE)
+   SIDEBAR (ALREADY GOOD)
 ===================== */
 
 .sidebar {
   width: 240px;
-  background: linear-gradient(180deg, #003f99, #002a66);
+  background: linear-gradient(180deg, #003f99, #002b66);
   padding: 22px 18px;
   display: flex;
   flex-direction: column;
@@ -81,69 +84,55 @@ body {
   color: #e6f0ff;
   text-decoration: none;
   padding: 12px 18px;
-  border-radius: 10px;
-  position: relative;
+  border-radius: 12px;
   transition: all 0.3s ease;
-}
-
-.sidebar a::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  border-radius: 10px;
-  background: radial-gradient(circle at top left,
-    rgba(255,255,255,0.18),
-    transparent 60%);
-  opacity: 0;
-  transition: opacity 0.3s ease;
-}
-
-.sidebar a:hover::after {
-  opacity: 1;
+  position: relative;
 }
 
 .sidebar a:hover {
+  background: rgba(255,255,255,0.15);
   transform: translateX(6px);
-  background: rgba(255,255,255,0.12);
 }
 
 .sidebar a.active {
   background: linear-gradient(135deg, #2aa3ff, #005eff);
   color: #ffffff;
   transform: translateX(10px);
-  box-shadow: 0 6px 18px rgba(0,94,255,0.45);
+  box-shadow:
+    0 8px 24px rgba(0, 94, 255, 0.55);
 }
 
 /* =====================
-   CONTENT AREA
+   CONTENT
 ===================== */
 
 .content {
   flex: 1;
-  padding: 34px;
+  padding: 36px;
 }
 
 /* =====================
-   GLASS CARDS (KEY PART)
+   GLASS CARDS (NOW OBVIOUS)
 ===================== */
 
 .card {
-  background: rgba(255,255,255,0.75);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  padding: 28px;
-  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  padding: 30px;
+  border-radius: 20px;
+  border: 1px solid rgba(255,255,255,0.35);
   box-shadow:
-    0 18px 40px rgba(0,0,0,0.08),
-    inset 0 1px 0 rgba(255,255,255,0.6);
+    0 20px 45px rgba(0, 0, 0, 0.12),
+    inset 0 1px 0 rgba(255,255,255,0.7);
   transition: all 0.35s ease;
-  animation: cardEnter 0.5s ease forwards;
+  animation: cardFade 0.6s ease forwards;
 }
 
-@keyframes cardEnter {
+@keyframes cardFade {
   from {
     opacity: 0;
-    transform: translateY(12px);
+    transform: translateY(16px);
   }
   to {
     opacity: 1;
@@ -152,34 +141,33 @@ body {
 }
 
 .card:hover {
-  transform: translateY(-6px) scale(1.01);
+  transform: translateY(-10px) scale(1.02);
   box-shadow:
-    0 28px 60px rgba(0,0,0,0.12),
-    inset 0 1px 0 rgba(255,255,255,0.7);
+    0 30px 70px rgba(0, 90, 200, 0.25),
+    0 0 22px rgba(60, 140, 255, 0.35);
 }
 
 .card h2 {
-  margin-bottom: 14px;
+  margin-bottom: 16px;
   color: #003366;
 }
 
 .card p {
-  line-height: 1.6;
+  line-height: 1.65;
   color: #374151;
 }
 
 /* =====================
-   COMING SOON STYLE
+   COMING SOON
 ===================== */
 
 .coming-soon {
   text-align: center;
   font-size: 1.1rem;
-  opacity: 0.9;
 }
 
 /* =====================
-   MOBILE REFINEMENT
+   MOBILE
 ===================== */
 
 @media (max-width: 768px) {
@@ -196,7 +184,6 @@ body {
   }
 
   .sidebar a {
-    padding: 10px 14px;
     transform: none;
   }
 
