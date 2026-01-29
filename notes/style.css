@@ -2,7 +2,7 @@
    NOTES PAGE
 ===================== */
 
-/* Outer cards (Curriculum Sheets / PYQs) */
+/* Outer cards (Curriculum / PYQs) */
 .notes-card {
   border-radius: 22px;
   overflow: hidden;
@@ -23,7 +23,7 @@
   box-shadow: 0 20px 55px rgba(0,80,200,0.25);
 }
 
-/* Notes header inside outer card */
+/* Notes header */
 .notes-header {
   padding: 22px 28px;
   font-size: 1.25rem;
@@ -82,7 +82,7 @@
   box-shadow: 0 10px 24px rgba(0,90,200,0.25);
 }
 
-/* Inner card content (subjects / pyqs) */
+/* Inner card content (subjects / PYQs) */
 .semester-content,
 .pyq-list {
   max-height: 0;
@@ -97,9 +97,11 @@
   padding-top: 10px;
 }
 
-/* Subjects and PYQs links */
-.subjects a,
-.pyq-list a {
+/* =====================
+   LINKS (Subjects / PYQs)
+===================== */
+
+.interactive-link {
   text-decoration: none;
   color: #003366;
   font-weight: 500;
@@ -109,16 +111,14 @@
   transition: all 0.3s ease;
 }
 
-.subjects a:hover,
-.pyq-list a:hover {
+.interactive-link:hover {
   background: rgba(0,90,200,0.12);
   transform: translateY(-2px);
   box-shadow: 0 4px 12px rgba(0,90,200,0.15);
 }
 
-/* Temporary click effect for links */
-.subjects a.clicked,
-.pyq-list a.clicked {
+/* Temporary click effect */
+.interactive-link.clicked {
   background: linear-gradient(135deg, #cfe3ff, #eaf3ff);
   box-shadow: 0 6px 18px rgba(0,90,200,0.25);
 }
