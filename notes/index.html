@@ -4,37 +4,78 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Notes | CASA</title>
+
+  <!-- GLOBAL -->
   <link rel="stylesheet" href="/home/assets/css/style.css" />
+
+  <!-- NOTES ONLY -->
+  <link rel="stylesheet" href="./style.css" />
 </head>
 
 <body data-current="notes">
 
 <header class="top-header">
-  <img src="/home/assets/images/casa-logo.png" alt="CASA Logo" class="logo left">
+  <img src="/home/assets/images/casa-logo.png" class="logo left">
   <h1 class="site-title">CASA</h1>
-  <img src="/home/assets/images/college-logo.png" alt="College Logo" class="logo right">
+  <img src="/home/assets/images/college-logo.png" class="logo right">
 </header>
 
 <div class="layout">
   <aside class="sidebar">
-        <a href="/home/" data-page="home">Home</a>
-        <a href="/home/events/" data-page="events">Upcoming Events</a>
-        <a href="/home/notes/" data-page="notes">Notes</a>
-        <a href="/home/archives/" data-page="archives">Archives</a>
+    <a href="/home/">Home</a>
+    <a href="/home/events/">Upcoming Events</a>
+    <a href="/home/notes/">Notes</a>
+    <a href="/home/archives/">Archives</a>
   </aside>
 
   <main class="content">
-    <section class="card coming-soon">
-      <h2>Notes</h2>
-      <p>
-        📘 Study materials and subject-wise notes will be uploaded here.
-        <br><br>
-        Please check back soon.
-      </p>
+
+    <!-- CURRICULUM -->
+    <section class="card notes-section">
+      <h2 class="notes-header">Curriculum Sheets</h2>
+
+      <div class="semesters">
+
+        <div class="semester">
+          <div class="semester-title">Semester 1</div>
+          <ul class="subjects">
+            <li><a href="#">Mathematics I</a></li>
+            <li><a href="#">Physics</a></li>
+            <li><a href="#">Programming Basics</a></li>
+          </ul>
+        </div>
+
+        <div class="semester">
+          <div class="semester-title">Semester 2</div>
+          <ul class="subjects">
+            <li><a href="#">Mathematics II</a></li>
+            <li><a href="#">Data Structures</a></li>
+          </ul>
+        </div>
+
+        <!-- Repeat till Semester 6 -->
+
+      </div>
     </section>
+
+    <!-- PYQs -->
+    <section class="card notes-section">
+      <h2 class="notes-header">Previous Year Questions (PYQs)</h2>
+      <ul class="pyq-list">
+        <li><a href="#">DSA PYQs – 2023</a></li>
+        <li><a href="#">OS PYQs – 2022</a></li>
+        <li><a href="#">DBMS PYQs – 2021</a></li>
+      </ul>
+    </section>
+
   </main>
 </div>
 
+<!-- GLOBAL -->
 <script src="/home/assets/js/script.js"></script>
+
+<!-- NOTES ONLY -->
+<script src="./script.js"></script>
+
 </body>
 </html>
