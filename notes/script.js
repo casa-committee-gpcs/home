@@ -1,34 +1,58 @@
 document.addEventListener("DOMContentLoaded", () => {
+  /* =====================
+     ACTIVE NAV DETECTION
+  ===================== */
+  const links = document.querySelectorAll(".sidebar a");
+  const path = window.location.pathname;
 
-  // LEVEL 1 – Notes cards
-  const cards = document.querySelectorAll(".notes-card");
+  links.forEach(link => {
+    const href = link.getAttribute("href");
+    if (
+      path.endsWith(href) ||
+      (href === "/" && path.endsWith("/home/"))
+    ) {
+      link.classList.add("active");
+    }
+  });
 
-  cards.forEach(card => {
+  /* =====================
+     OUTER CARD EXPAND
+  ===================== */
+  const notesCards = document.querySelectorAll(".notes-card");
+  notesCards.forEach(card => {
     const header = card.querySelector(".notes-header");
-
     header.addEventListener("click", () => {
-      cards.forEach(c => {
+      notesCards.forEach(c => {
         if (c !== card) c.classList.remove("active");
       });
       card.classList.toggle("active");
     });
   });
 
-  // LEVEL 2 – Semesters
+  /* =====================
+     INNER SEMESTER EXPAND
+  ===================== */
   const semesters = document.querySelectorAll(".semester");
-
-  semesters.forEach(sem => {
-    const title = sem.querySelector(".semester-title");
-
-    title.addEventListener("click", (e) => {
-      e.stopPropagation(); // IMPORTANT: prevents closing parent
-
-      semesters.forEach(s => {
-        if (s !== sem) s.classList.remove("active");
+  semesters.forEach(semester => {
+    const title = semester.querySelector(".semester-title");
+    title.addEventListener("click", () => {
+      const parentCard = semester.closest(".notes-card");
+      // close other semesters in same card
+      parentCard.querySelectorAll(".semester").forEach(s => {
+        if (s !== semester) s.classList.remove("active");
       });
-
-      sem.classList.toggle("active");
+      semester.classList.toggle("active");
     });
   });
 
+  /* =====================
+     TEMPORARY CLICK EFFECT ON LINKS
+  ===================== */
+  const interactiveLinks = document.querySelectorAll(".subjects a, .pyq-list a");
+  interactiveLinks.forEach(link => {
+    link.addEventListener("click", e => {
+      link.classList.add("clicked");
+      setTimeout(() => link.classList.remove("clicked"), 2000); // 2 seconds
+    });
+  });
 });
