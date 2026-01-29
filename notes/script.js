@@ -1,4 +1,5 @@
 document.addEventListener("DOMContentLoaded", () => {
+
   /* =====================
      ACTIVE NAV DETECTION
   ===================== */
@@ -37,7 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const title = semester.querySelector(".semester-title");
     title.addEventListener("click", () => {
       const parentCard = semester.closest(".notes-card");
-      // close other semesters in same card
+      // Close other semesters in same card
       parentCard.querySelectorAll(".semester").forEach(s => {
         if (s !== semester) s.classList.remove("active");
       });
@@ -48,11 +49,12 @@ document.addEventListener("DOMContentLoaded", () => {
   /* =====================
      TEMPORARY CLICK EFFECT ON LINKS
   ===================== */
-  const interactiveLinks = document.querySelectorAll(".subjects a, .pyq-list a");
+  const interactiveLinks = document.querySelectorAll(".interactive-link");
   interactiveLinks.forEach(link => {
     link.addEventListener("click", e => {
       link.classList.add("clicked");
-      setTimeout(() => link.classList.remove("clicked"), 2000); // 2 seconds
+      setTimeout(() => link.classList.remove("clicked"), 2000);
     });
   });
+
 });
