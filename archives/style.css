@@ -1,14 +1,25 @@
+/* =====================
+   ARCHIVES LAYOUT
+===================== */
+
 .archives {
   display: flex;
   flex-direction: column;
   gap: 24px;
 }
 
+/* =====================
+   ARCHIVE CARD
+===================== */
+
 .archive-card {
   border-radius: 20px;
   overflow: hidden;
-  cursor: pointer;
 }
+
+/* =====================
+   ARCHIVE HEADER
+===================== */
 
 .archive-header {
   padding: 22px 28px;
@@ -18,26 +29,40 @@
   backdrop-filter: blur(14px);
   border-radius: 20px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  cursor: pointer;
   transition: all 0.35s ease;
+}
+
+.archive-header:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(0,90,200,0.25);
 }
 
 .archive-card.active .archive-header {
   background: linear-gradient(135deg, #dbeaff, #f5f9ff);
-  box-shadow: 0 20px 55px rgba(0,80,200,0.25);
+  box-shadow: 0 22px 55px rgba(0,80,200,0.3);
 }
+
+/* =====================
+   ARCHIVE CONTENT (ACCORDION)
+===================== */
 
 .archive-content {
   max-height: 0;
   overflow: hidden;
-  transition: max-height 0.6s ease, padding 0.4s ease;
   padding: 0 28px;
   background: rgba(240,247,255,0.85);
+  transition: max-height 0.6s ease, padding 0.4s ease;
 }
 
 .archive-card.active .archive-content {
   padding: 26px 28px 30px;
-  max-height: 1200px;
+  max-height: 1400px;
 }
+
+/* =====================
+   ARCHIVE LINKS
+===================== */
 
 .archive-content ul {
   list-style: none;
@@ -47,11 +72,34 @@
   margin-bottom: 12px;
 }
 
+/* Normal */
 .archive-content a {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 8px;
   text-decoration: none;
   color: #003366;
   font-weight: 500;
+  transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 }
+
+/* Hover (ONLY while hovering) */
+.archive-content a:hover {
+  background: rgba(0,90,200,0.12);
+  color: #005eff;
+  box-shadow: 0 0 0 2px rgba(0,90,200,0.15);
+}
+
+/* Click feedback (TEMPORARY) */
+.archive-content a.clicked {
+  background: linear-gradient(135deg, #2aa3ff, #005eff);
+  color: #ffffff;
+  box-shadow: 0 6px 18px rgba(0,94,255,0.5);
+}
+
+/* =====================
+   HISTORY SECTION
+===================== */
 
 .archive-content.history h4 {
   margin: 20px 0 10px;
@@ -61,13 +109,23 @@
 .archive-content.history img {
   width: 100%;
   border-radius: 16px;
-  margin-bottom: 16px;
+  margin-bottom: 18px;
   box-shadow: 0 14px 40px rgba(0,0,0,0.18);
 }
 
-/* MOBILE REFINEMENTS */
+/* =====================
+   MOBILE
+===================== */
+
 @media (max-width: 768px) {
+
   .archive-header {
     font-size: 1.05rem;
+    padding: 18px 22px;
+  }
+
+  .archive-content {
+    padding-left: 20px;
+    padding-right: 20px;
   }
 }
