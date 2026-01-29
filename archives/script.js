@@ -1,4 +1,9 @@
 document.addEventListener("DOMContentLoaded", () => {
+
+  /* =====================
+     ARCHIVE CARD TOGGLE
+  ===================== */
+
   const cards = document.querySelectorAll(".archive-card");
 
   cards.forEach(card => {
@@ -11,4 +16,27 @@ document.addEventListener("DOMContentLoaded", () => {
       card.classList.toggle("active");
     });
   });
+
+
+  /* =====================
+     TEMP CLICK FEEDBACK (LINKS)
+  ===================== */
+
+  const archiveLinks = document.querySelectorAll(".archive-content a");
+
+  archiveLinks.forEach(link => {
+
+    // Prevent card click feeling
+    link.addEventListener("click", (e) => {
+      e.stopPropagation();
+
+      link.classList.add("clicked");
+
+      setTimeout(() => {
+        link.classList.remove("clicked");
+      }, 2000);
+    });
+
+  });
+
 });
