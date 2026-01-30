@@ -1,155 +1,110 @@
-.notes-section {
-  margin-bottom: 32px;
-}
+/* =====================
+   EXPANDABLE CARDS (BASE)
+===================== */
 
-.notes-header {
-  font-size: 1.4rem;
-  margin-bottom: 20px;
-  color: #003366;
-}
-
-/* SEMESTERS */
-.semesters {
-  display: flex;
-  flex-direction: column;
-  gap: 16px;
-}
-
-.semester {
-  border-radius: 16px;
+.expand-card {
+  border-radius: 20px;
+  margin-bottom: 26px;
   overflow: hidden;
-  background: rgba(255,255,255,0.75);
-  backdrop-filter: blur(14px);
-  transition: all 0.4s ease;
 }
 
-.semester-title {
-  padding: 18px 24px;
+.expand-header {
+  padding: 22px 28px;
+  font-size: 1.15rem;
   font-weight: 600;
   cursor: pointer;
+  transition: all 0.35s ease;
 }
 
-.semester.active {
-  box-shadow: 0 20px 50px rgba(0,80,200,0.25);
-}
-
-.subjects {
+.expand-body {
   max-height: 0;
   overflow: hidden;
-  padding: 0 24px;
-  transition: max-height 0.5s ease, padding 0.3s ease;
-}
-
-.semester.active .subjects {
-  max-height: 500px;
-  padding: 16px 24px 22px;
-}
-
-.subjects li {
-  list-style: none;
-  margin-bottom: 10px;
-}
-
-.subjects a,
-.pyq-list a {
-  text-decoration: none;
-  color: #003366;
-  font-weight: 500;
-  display: inline-block;
-  padding: 6px 10px;
-  border-radius: 8px;
-}
-
-.subjects a:hover,
-.pyq-list a:hover {
-  background: rgba(0,90,200,0.12);
-}
-
-/* PYQ */
-.pyq-list {
-  list-style: none;
-}
-
-.pyq-list li {
-  margin-bottom: 12px;
-}
-
-/* MOBILE */
-@media (max-width: 768px) {
-  .semester-title {
-    font-size: 1.05rem;
-  }
+  padding: 0 28px;
+  transition: max-height 0.6s ease, padding 0.4s ease;
 }
 
 /* =====================
-   NOTES EXPAND PATCH
+   OUTER CARDS
 ===================== */
 
-.notes-card {
-  cursor: pointer;
-}
-
-.notes-card-header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
-.notes-card-body {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.6s ease, padding 0.4s ease;
-  padding: 0 4px;
-}
-
-.notes-card.active .notes-card-body {
-  max-height: 1200px;
-  padding-top: 20px;
-}
-
-.notes-card.active {
-  box-shadow:
-    0 30px 70px rgba(0, 90, 200, 0.28),
-    0 0 26px rgba(80, 150, 255, 0.35);
-}
-
-/* SEMESTER PATCH */
-
-.semester {
-  margin-bottom: 14px;
-}
-
-.semester-title {
-  padding: 14px 18px;
-  border-radius: 14px;
+.expand-card.outer .expand-header {
   background: rgba(255,255,255,0.8);
-  font-weight: 600;
-  cursor: pointer;
-  transition: all 0.3s ease;
+  backdrop-filter: blur(14px);
+  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
 }
 
-.semester-title:hover {
-  background: #e8f1ff;
+.expand-card.outer.active .expand-header {
+  background: linear-gradient(135deg, #dbeaff, #f5f9ff);
 }
 
-.semester.active .semester-title {
-  background: linear-gradient(135deg, #dbeaff, #f4f8ff);
-  box-shadow: 0 10px 30px rgba(0,80,200,0.25);
+.expand-card.outer.active .expand-body {
+  max-height: 2000px;
+  padding: 24px 28px 30px;
 }
 
-.semester-content {
-  max-height: 0;
-  overflow: hidden;
-  padding-left: 20px;
-  transition: max-height 0.4s ease;
+/* =====================
+   INNER (SEMESTER) CARDS
+===================== */
+
+.expand-card.inner {
+  margin-top: 18px;
 }
 
-.semester.active .semester-content {
-  max-height: 400px;
+.expand-card.inner .expand-header {
+  background: rgba(240,247,255,0.9);
+  border-radius: 16px;
 }
 
-/* PYQ LIST */
+.expand-card.inner.active .expand-header {
+  background: linear-gradient(135deg, #eef4ff, #ffffff);
+}
 
-.pyq-list li {
-  margin-bottom: 10px;
+.expand-card.inner.active .expand-body {
+  max-height: 1200px;
+  padding: 18px 22px 22px;
+}
+
+/* =====================
+   DOCUMENT LIST
+===================== */
+
+.doc-list {
+  list-style: none;
+}
+
+.doc-list li {
+  margin-bottom: 12px;
+}
+
+.doc-list a {
+  text-decoration: none;
+  color: #003366;
+  font-weight: 500;
+}
+
+.doc-list a:hover {
+  text-decoration: underline;
+}
+
+/* =====================
+   MOBILE – PILLS (ONLY DEEPEST LEVEL)
+===================== */
+
+@media (max-width: 768px) {
+  .doc-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+  }
+
+  .doc-list li {
+    margin: 0;
+  }
+
+  .doc-list a {
+    padding: 8px 14px;
+    border-radius: 999px;
+    background: rgba(0,80,200,0.08);
+    font-size: 0.9rem;
+  }
 }
