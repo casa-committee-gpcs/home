@@ -1,110 +1,131 @@
 /* =====================
-   EXPANDABLE CARDS (BASE)
+   NOTES LAYOUT
 ===================== */
 
-.expand-card {
+.notes {
+  display: flex;
+  flex-direction: column;
+  gap: 26px;
+}
+
+/* =====================
+   NOTES CARD (ARCHIVES ENGINE)
+===================== */
+
+.notes-card {
   border-radius: 20px;
-  margin-bottom: 26px;
   overflow: hidden;
 }
 
-.expand-header {
+/* =====================
+   NOTES HEADER (FIXED)
+===================== */
+
+.notes-header {
   padding: 22px 28px;
   font-size: 1.15rem;
   font-weight: 600;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(14px);
+  border-radius: 20px;
+  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
   cursor: pointer;
   transition: all 0.35s ease;
 }
 
-.expand-body {
+.notes-header:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 18px 40px rgba(0,90,200,0.25);
+}
+
+.notes-card.active > .notes-header {
+  background: linear-gradient(135deg, #dbeaff, #f5f9ff);
+  box-shadow: 0 22px 55px rgba(0,80,200,0.3);
+}
+
+/* =====================
+   NOTES CONTENT (ACCORDION)
+===================== */
+
+.notes-content {
   max-height: 0;
   overflow: hidden;
   padding: 0 28px;
+  background: rgba(240,247,255,0.85);
   transition: max-height 0.6s ease, padding 0.4s ease;
 }
 
-/* =====================
-   OUTER CARDS
-===================== */
-
-.expand-card.outer .expand-header {
-  background: rgba(255,255,255,0.8);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 16px 40px rgba(0,0,0,0.12);
-}
-
-.expand-card.outer.active .expand-header {
-  background: linear-gradient(135deg, #dbeaff, #f5f9ff);
-}
-
-.expand-card.outer.active .expand-body {
-  max-height: 2000px;
-  padding: 24px 28px 30px;
+.notes-card.active > .notes-content {
+  padding: 26px 28px 30px;
+  max-height: 1600px;
 }
 
 /* =====================
-   INNER (SEMESTER) CARDS
+   INNER CARDS (SEMESTERS)
 ===================== */
 
-.expand-card.inner {
-  margin-top: 18px;
+.notes-card.inner .notes-header {
+  font-size: 1.05rem;
+  background: rgba(255,255,255,0.65);
 }
 
-.expand-card.inner .expand-header {
-  background: rgba(240,247,255,0.9);
-  border-radius: 16px;
-}
-
-.expand-card.inner.active .expand-header {
-  background: linear-gradient(135deg, #eef4ff, #ffffff);
-}
-
-.expand-card.inner.active .expand-body {
-  max-height: 1200px;
-  padding: 18px 22px 22px;
+.notes-card.inner.active > .notes-header {
+  background: linear-gradient(135deg, #edf4ff, #ffffff);
 }
 
 /* =====================
-   DOCUMENT LIST
+   SUBJECT LIST
 ===================== */
 
-.doc-list {
+.subject-list {
   list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
 }
 
-.doc-list li {
-  margin-bottom: 12px;
-}
-
-.doc-list a {
+.subject-list a {
+  display: inline-block;
+  padding: 8px 14px;
+  border-radius: 10px;
   text-decoration: none;
   color: #003366;
   font-weight: 500;
+  transition: all 0.25s ease;
 }
 
-.doc-list a:hover {
-  text-decoration: underline;
+.subject-list a:hover {
+  background: rgba(0,90,200,0.12);
+  color: #005eff;
+  box-shadow: 0 0 0 2px rgba(0,90,200,0.15);
 }
 
 /* =====================
-   MOBILE – PILLS (ONLY DEEPEST LEVEL)
+   PYQs (SAME ENGINE)
+===================== */
+
+.pyq-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* =====================
+   MOBILE (PILLS ONLY INSIDE SEM)
 ===================== */
 
 @media (max-width: 768px) {
-  .doc-list {
-    display: flex;
+
+  .subject-list {
+    flex-direction: row;
     flex-wrap: wrap;
     gap: 10px;
   }
 
-  .doc-list li {
-    margin: 0;
-  }
-
-  .doc-list a {
-    padding: 8px 14px;
+  .subject-list a {
     border-radius: 999px;
-    background: rgba(0,80,200,0.08);
-    font-size: 0.9rem;
+    padding: 8px 16px;
+    font-size: 0.95rem;
   }
 }
