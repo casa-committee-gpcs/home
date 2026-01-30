@@ -5,11 +5,11 @@
 .notes {
   display: flex;
   flex-direction: column;
-  gap: 26px;
+  gap: 28px;
 }
 
 /* =====================
-   NOTES CARD (ARCHIVES ENGINE)
+   NOTES CARD
 ===================== */
 
 .notes-card {
@@ -18,17 +18,24 @@
 }
 
 /* =====================
-   NOTES HEADER (FIXED)
+   HEADER WITH CHEVRON
 ===================== */
 
 .notes-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
   padding: 22px 28px;
   font-size: 1.15rem;
   font-weight: 600;
+
   background: rgba(255,255,255,0.75);
   backdrop-filter: blur(14px);
+
   border-radius: 20px;
   box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+
   cursor: pointer;
   transition: all 0.35s ease;
 }
@@ -44,7 +51,20 @@
 }
 
 /* =====================
-   NOTES CONTENT (ACCORDION)
+   CHEVRON
+===================== */
+
+.chevron {
+  font-size: 1.2rem;
+  transition: transform 0.4s ease;
+}
+
+.notes-card.active > .notes-header .chevron {
+  transform: rotate(180deg);
+}
+
+/* =====================
+   CONTENT (ACCORDION)
 ===================== */
 
 .notes-content {
@@ -57,11 +77,11 @@
 
 .notes-card.active > .notes-content {
   padding: 26px 28px 30px;
-  max-height: 1600px;
+  max-height: 4000px;
 }
 
 /* =====================
-   INNER CARDS (SEMESTERS)
+   INNER SEMESTER CARDS
 ===================== */
 
 .notes-card.inner .notes-header {
@@ -74,17 +94,19 @@
 }
 
 /* =====================
-   SUBJECT LIST
+   SUBJECT / PYQ LISTS
 ===================== */
 
-.subject-list {
+.subject-list,
+.pyq-list {
   list-style: none;
   display: flex;
   flex-direction: column;
   gap: 10px;
 }
 
-.subject-list a {
+.subject-list a,
+.pyq-list a {
   display: inline-block;
   padding: 8px 14px;
   border-radius: 10px;
@@ -94,29 +116,18 @@
   transition: all 0.25s ease;
 }
 
-.subject-list a:hover {
+.subject-list a:hover,
+.pyq-list a:hover {
   background: rgba(0,90,200,0.12);
   color: #005eff;
   box-shadow: 0 0 0 2px rgba(0,90,200,0.15);
 }
 
 /* =====================
-   PYQs (SAME ENGINE)
-===================== */
-
-.pyq-list {
-  list-style: none;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-}
-
-/* =====================
-   MOBILE (PILLS ONLY INSIDE SEM)
+   MOBILE – PILLS INSIDE SEM ONLY
 ===================== */
 
 @media (max-width: 768px) {
-
   .subject-list {
     flex-direction: row;
     flex-wrap: wrap;

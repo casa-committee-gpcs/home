@@ -1,12 +1,16 @@
-document.querySelectorAll(".notes-header").forEach(header => {
-  header.addEventListener("click", () => {
-    const card = header.parentElement;
-    const siblings = card.parentElement.querySelectorAll(":scope > .notes-card");
+document.addEventListener("DOMContentLoaded", () => {
+  const cards = document.querySelectorAll(".notes-card");
 
-    siblings.forEach(sib => {
-      if (sib !== card) sib.classList.remove("active");
+  cards.forEach(card => {
+    const header = card.querySelector(":scope > .notes-header");
+    if (!header) return;
+
+    header.addEventListener("click", () => {
+      const siblings = Array.from(card.parentElement.children)
+        .filter(el => el !== card && el.classList.contains("notes-card"));
+
+      siblings.forEach(sib => sib.classList.remove("active"));
+      card.classList.toggle("active");
     });
-
-    card.classList.toggle("active");
   });
 });
