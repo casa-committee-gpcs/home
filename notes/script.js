@@ -1,59 +1,46 @@
 document.addEventListener("DOMContentLoaded", () => {
+  const semesters = document.querySelectorAll(".semester");
 
-  /* =====================
-     ACTIVE NAV DETECTION
-  ===================== */
-  const links = document.querySelectorAll(".sidebar a");
-  const path = window.location.pathname;
+  semesters.forEach(sem => {
+    const title = sem.querySelector(".semester-title");
 
-  links.forEach(link => {
-    const href = link.getAttribute("href");
-    if (
-      path.endsWith(href) ||
-      (href === "/" && path.endsWith("/home/"))
-    ) {
-      link.classList.add("active");
-    }
+    title.addEventListener("click", () => {
+      semesters.forEach(s => {
+        if (s !== sem) s.classList.remove("active");
+      });
+      sem.classList.toggle("active");
+    });
   });
+});
 
-  /* =====================
-     OUTER CARD EXPAND
-  ===================== */
-  const notesCards = document.querySelectorAll(".notes-card");
-  notesCards.forEach(card => {
-    const header = card.querySelector(".notes-header");
+document.addEventListener("DOMContentLoaded", () => {
+
+  /* OUTER NOTES CARDS */
+  const noteCards = document.querySelectorAll(".notes-card");
+
+  noteCards.forEach(card => {
+    const header = card.querySelector(".notes-card-header");
+
     header.addEventListener("click", () => {
-      notesCards.forEach(c => {
+      noteCards.forEach(c => {
         if (c !== card) c.classList.remove("active");
       });
       card.classList.toggle("active");
     });
   });
 
-  /* =====================
-     INNER SEMESTER EXPAND
-  ===================== */
+  /* SEMESTERS */
   const semesters = document.querySelectorAll(".semester");
-  semesters.forEach(semester => {
-    const title = semester.querySelector(".semester-title");
-    title.addEventListener("click", () => {
-      const parentCard = semester.closest(".notes-card");
-      // Close other semesters in same card
-      parentCard.querySelectorAll(".semester").forEach(s => {
-        if (s !== semester) s.classList.remove("active");
-      });
-      semester.classList.toggle("active");
-    });
-  });
 
-  /* =====================
-     TEMPORARY CLICK EFFECT ON LINKS
-  ===================== */
-  const interactiveLinks = document.querySelectorAll(".interactive-link");
-  interactiveLinks.forEach(link => {
-    link.addEventListener("click", e => {
-      link.classList.add("clicked");
-      setTimeout(() => link.classList.remove("clicked"), 2000);
+  semesters.forEach(sem => {
+    const title = sem.querySelector(".semester-title");
+
+    title.addEventListener("click", e => {
+      e.stopPropagation(); // 🔥 prevents closing parent card
+      semesters.forEach(s => {
+        if (s !== sem) s.classList.remove("active");
+      });
+      sem.classList.toggle("active");
     });
   });
 
