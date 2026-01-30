@@ -1,56 +1,14 @@
-/* =====================
-   NOTES PAGE
-===================== */
-
-/* Outer cards (Curriculum / PYQs) */
-.notes-card {
-  border-radius: 22px;
-  overflow: hidden;
-  background: rgba(255, 255, 255, 0.7);
-  backdrop-filter: blur(14px);
-  transition: all 0.35s ease;
-  cursor: pointer;
-  box-shadow: 0 12px 28px rgba(0,0,0,0.12);
+.notes-section {
+  margin-bottom: 32px;
 }
 
-.notes-card:hover {
-  transform: translateY(-6px) scale(1.01);
-  box-shadow: 0 25px 60px rgba(0,90,200,0.18);
-}
-
-.notes-card.active .notes-header {
-  background: linear-gradient(135deg, #dbeaff, #f5f9ff);
-  box-shadow: 0 20px 55px rgba(0,80,200,0.25);
-}
-
-/* Notes header */
 .notes-header {
-  padding: 22px 28px;
-  font-size: 1.25rem;
-  font-weight: 600;
-  background: rgba(255,255,255,0.75);
-  backdrop-filter: blur(14px);
-  transition: all 0.35s ease;
+  font-size: 1.4rem;
+  margin-bottom: 20px;
+  color: #003366;
 }
 
-/* Outer card content */
-.notes-body {
-  max-height: 0;
-  overflow: hidden;
-  padding: 0 28px;
-  transition: max-height 0.6s ease, padding 0.4s ease;
-  background: rgba(240,247,255,0.85);
-}
-
-.notes-card.active .notes-body {
-  padding: 26px 28px 30px;
-  max-height: 1500px;
-}
-
-/* =====================
-   SEMESTERS (Inner cards)
-===================== */
-
+/* SEMESTERS */
 .semesters {
   display: flex;
   flex-direction: column;
@@ -62,87 +20,136 @@
   overflow: hidden;
   background: rgba(255,255,255,0.75);
   backdrop-filter: blur(14px);
-  transition: all 0.35s ease;
+  transition: all 0.4s ease;
 }
 
 .semester-title {
-  padding: 16px 20px;
+  padding: 18px 24px;
   font-weight: 600;
   cursor: pointer;
-  transition: all 0.3s ease;
-  border-radius: 14px;
 }
 
-.semester-title:hover {
-  background: rgba(0,90,200,0.12);
+.semester.active {
+  box-shadow: 0 20px 50px rgba(0,80,200,0.25);
 }
 
-.semester.active .semester-title {
-  background: linear-gradient(135deg, #cfe3ff, #eaf3ff);
-  box-shadow: 0 10px 24px rgba(0,90,200,0.25);
-}
-
-/* Inner card content (subjects / PYQs) */
-.semester-content,
-.pyq-list {
+.subjects {
   max-height: 0;
   overflow: hidden;
-  padding-left: 18px;
+  padding: 0 24px;
   transition: max-height 0.5s ease, padding 0.3s ease;
 }
 
-.semester.active .semester-content,
-.pyq-list.active {
-  max-height: 600px;
-  padding-top: 10px;
+.semester.active .subjects {
+  max-height: 500px;
+  padding: 16px 24px 22px;
 }
 
-/* =====================
-   LINKS (Subjects / PYQs)
-===================== */
+.subjects li {
+  list-style: none;
+  margin-bottom: 10px;
+}
 
-.interactive-link {
+.subjects a,
+.pyq-list a {
   text-decoration: none;
   color: #003366;
   font-weight: 500;
   display: inline-block;
   padding: 6px 10px;
   border-radius: 8px;
-  transition: all 0.3s ease;
 }
 
-.interactive-link:hover {
+.subjects a:hover,
+.pyq-list a:hover {
   background: rgba(0,90,200,0.12);
-  transform: translateY(-2px);
-  box-shadow: 0 4px 12px rgba(0,90,200,0.15);
 }
 
-/* Temporary click effect */
-.interactive-link.clicked {
-  background: linear-gradient(135deg, #cfe3ff, #eaf3ff);
-  box-shadow: 0 6px 18px rgba(0,90,200,0.25);
+/* PYQ */
+.pyq-list {
+  list-style: none;
+}
+
+.pyq-list li {
+  margin-bottom: 12px;
+}
+
+/* MOBILE */
+@media (max-width: 768px) {
+  .semester-title {
+    font-size: 1.05rem;
+  }
 }
 
 /* =====================
-   MOBILE PILLS
+   NOTES EXPAND PATCH
 ===================== */
 
-@media (max-width: 768px) {
-  .semesters {
-    flex-direction: row;
-    overflow-x: auto;
-    gap: 12px;
-    padding: 8px 0;
-  }
+.notes-card {
+  cursor: pointer;
+}
 
-  .semester {
-    flex: 0 0 auto;
-    min-width: 140px;
-  }
+.notes-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
 
-  .semester-title {
-    text-align: center;
-    padding: 12px 16px;
-    font-size: 1rem;
-  }
+.notes-card-body {
+  max-height: 0;
+  overflow: hidden;
+  transition: max-height 0.6s ease, padding 0.4s ease;
+  padding: 0 4px;
+}
+
+.notes-card.active .notes-card-body {
+  max-height: 1200px;
+  padding-top: 20px;
+}
+
+.notes-card.active {
+  box-shadow:
+    0 30px 70px rgba(0, 90, 200, 0.28),
+    0 0 26px rgba(80, 150, 255, 0.35);
+}
+
+/* SEMESTER PATCH */
+
+.semester {
+  margin-bottom: 14px;
+}
+
+.semester-title {
+  padding: 14px 18px;
+  border-radius: 14px;
+  background: rgba(255,255,255,0.8);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.semester-title:hover {
+  background: #e8f1ff;
+}
+
+.semester.active .semester-title {
+  background: linear-gradient(135deg, #dbeaff, #f4f8ff);
+  box-shadow: 0 10px 30px rgba(0,80,200,0.25);
+}
+
+.semester-content {
+  max-height: 0;
+  overflow: hidden;
+  padding-left: 20px;
+  transition: max-height 0.4s ease;
+}
+
+.semester.active .semester-content {
+  max-height: 400px;
+}
+
+/* PYQ LIST */
+
+.pyq-list li {
+  margin-bottom: 10px;
 }
