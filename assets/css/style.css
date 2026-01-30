@@ -200,4 +200,112 @@ body {
     font-size: 1.1rem;
      text-align: center;
   }
+
+  .sidebar {
+    overflow-x: auto;
+    white-space: nowrap;
+    scrollbar-width: none;
+  }
+
+  .sidebar::-webkit-scrollbar {
+    display: none;
+  }
+
+  .sidebar a {
+    white-space: nowrap;
+    flex-shrink: 0;
+  }
+
+  .footer-credit .full-name {
+    display: none;
+  }
+
+  .footer-credit .short-name {
+    display: inline;
+    font-weight: 600;
+  }
+
+  .fixed-footer {
+    padding: 0 14px;
+  }
+}
+
+/* =====================
+   FIXED FOOTER
+===================== */
+
+.fixed-footer {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 56px;
+
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: 0 20px;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.85),
+    rgba(230,240,255,0.85)
+  );
+
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+
+  border-top: 1px solid rgba(0,0,0,0.08);
+  box-shadow: 0 -8px 30px rgba(0,60,150,0.18);
+
+  z-index: 200;
+}
+
+/* =====================
+   FOOTER LINKS
+===================== */
+
+.footer-links {
+  display: flex;
+  gap: 18px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.footer-links::-webkit-scrollbar {
+  display: none;
+}
+
+.footer-links a {
+  text-decoration: none;
+  font-size: 0.95rem;
+  color: #003366;
+  font-weight: 500;
+  white-space: nowrap;
+  transition: color 0.25s ease;
+}
+
+.footer-links a:hover {
+  color: #005eff;
+}
+
+/* =====================
+   FOOTER TEXT
+===================== */
+
+.footer-credit {
+  font-size: 0.85rem;
+  color: #374151;
+}
+
+.short-name {
+  display: none;
+}
+
+/* =====================
+   CONTENT OFFSET
+===================== */
+
+.content {
+  padding-bottom: 90px;
 }
