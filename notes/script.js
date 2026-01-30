@@ -1,14 +1,20 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const semesters = document.querySelectorAll(".semester");
+  const headers = document.querySelectorAll(".expand-header");
 
-  semesters.forEach(sem => {
-    const title = sem.querySelector(".semester-title");
+  headers.forEach(header => {
+    header.addEventListener("click", () => {
+      const card = header.parentElement;
+      const siblings = [...card.parentElement.children];
 
-    title.addEventListener("click", () => {
-      semesters.forEach(s => {
-        if (s !== sem) s.classList.remove("active");
+      // Close siblings at same level
+      siblings.forEach(sib => {
+        if (sib !== card && sib.classList.contains("expand-card")) {
+          sib.classList.remove("active");
+        }
       });
-      sem.classList.toggle("active");
+
+      // Toggle current
+      card.classList.toggle("active");
     });
   });
 });
