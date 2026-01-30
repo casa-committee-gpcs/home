@@ -5,81 +5,81 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Notes | CASA</title>
 
-  <!-- Global styles -->
+  <!-- GLOBAL STYLES -->
   <link rel="stylesheet" href="/home/assets/css/style.css" />
-  <!-- Notes-specific styles -->
-  <link rel="stylesheet" href="/home/notes/style.css" />
+
+  <!-- NOTES STYLES -->
+  <link rel="stylesheet" href="./style.css" />
 </head>
 
-<body data-current="notes">
+<body>
 
 <header class="top-header">
-  <img src="/home/assets/images/casa-logo.png" class="logo left">
+  <img src="/home/assets/images/casa-logo.png" class="logo">
   <h1 class="site-title">CASA</h1>
-  <img src="/home/assets/images/college-logo.png" class="logo right">
+  <img src="/home/assets/images/college-logo.png" class="logo">
 </header>
 
 <div class="layout">
   <aside class="sidebar">
     <a href="/home/">Home</a>
     <a href="/home/events/">Upcoming Events</a>
-    <a href="/home/notes/">Notes</a>
+    <a href="/home/notes/" class="active">Notes</a>
     <a href="/home/archives/">Archives</a>
   </aside>
 
-  <main class="content notes-page">
+  <main class="content">
+    <section class="notes">
 
-    <!-- CURRICULUM SHEETS -->
-    <section class="expand-card outer">
-      <div class="expand-header">📘 Curriculum Sheets</div>
+      <!-- CURRICULUM SHEETS -->
+      <div class="notes-card">
+        <div class="notes-header">📘 Curriculum Sheets</div>
 
-      <div class="expand-body">
+        <div class="notes-content">
 
-        <!-- SEMESTER 1 -->
-        <div class="expand-card inner">
-          <div class="expand-header">Semester 1</div>
-          <div class="expand-body">
-            <ul class="doc-list">
-              <li><a href="#">Mathematics I</a></li>
-              <li><a href="#">Physics</a></li>
-              <li><a href="#">Programming Fundamentals</a></li>
-            </ul>
+          <!-- SEM 1 -->
+          <div class="notes-card inner">
+            <div class="notes-header">Semester 1</div>
+            <div class="notes-content">
+              <ul class="subject-list">
+                <li><a href="#">Mathematics I</a></li>
+                <li><a href="#">Physics</a></li>
+                <li><a href="#">Programming Fundamentals</a></li>
+              </ul>
+            </div>
           </div>
-        </div>
 
-        <!-- SEMESTER 2 -->
-        <div class="expand-card inner">
-          <div class="expand-header">Semester 2</div>
-          <div class="expand-body">
-            <ul class="doc-list">
-              <li><a href="#">Mathematics II</a></li>
-              <li><a href="#">Data Structures</a></li>
-              <li><a href="#">Digital Logic</a></li>
-            </ul>
+          <!-- SEM 2 -->
+          <div class="notes-card inner">
+            <div class="notes-header">Semester 2</div>
+            <div class="notes-content">
+              <ul class="subject-list">
+                <li><a href="#">Mathematics II</a></li>
+                <li><a href="#">Data Structures</a></li>
+                <li><a href="#">Digital Logic</a></li>
+              </ul>
+            </div>
           </div>
+
         </div>
-
       </div>
-    </section>
 
-    <!-- PYQs -->
-    <section class="expand-card outer">
-      <div class="expand-header">📄 Previous Year Questions (PYQs)</div>
-      <div class="expand-body">
-        <ul class="doc-list">
-          <li><a href="#">DSA PYQs – 2023</a></li>
-          <li><a href="#">OS PYQs – 2022</a></li>
-          <li><a href="#">DBMS PYQs – 2021</a></li>
-        </ul>
+      <!-- PYQs -->
+      <div class="notes-card">
+        <div class="notes-header">📄 Previous Year Questions (PYQs)</div>
+        <div class="notes-content">
+          <ul class="pyq-list">
+            <li><a href="#">DSA – 2023</a></li>
+            <li><a href="#">OS – 2022</a></li>
+            <li><a href="#">Maths – 2021</a></li>
+          </ul>
+        </div>
       </div>
-    </section>
 
+    </section>
   </main>
 </div>
 
-<!-- Global JS -->
-<script src="/home/assets/js/script.js"></script>
-<!-- Notes JS -->
-<script src="/home/notes/script.js"></script>
+<script src="./script.js"></script>
 </body>
 </html>
