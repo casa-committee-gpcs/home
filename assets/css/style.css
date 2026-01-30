@@ -29,9 +29,9 @@ body {
   padding: 14px 28px;
   background: linear-gradient(
     270deg,
-    #ffffff,
+    #90e0ef,
     #eaf2ff,
-    #ffffff
+    #00B4DE
   );
   background-size: 500% 500%;
   animation: headerPulse 8s ease-in-out infinite;
