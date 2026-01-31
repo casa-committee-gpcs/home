@@ -4,50 +4,268 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>CASA | CO & AN Students Association</title>
+
+  <!-- GLOBAL CSS -->
   <link rel="stylesheet" href="./assets/css/style.css" />
 </head>
 
 <body data-current="home">
 
+<!-- =====================
+     HEADER
+===================== -->
 <header class="top-header">
   <img src="./assets/images/casa-logo.png" alt="CASA Logo" class="logo left">
   <h1 class="site-title">CO & AN Students Association (CASA)</h1>
   <img src="./assets/images/college-logo.png" alt="College Logo" class="logo right">
 </header>
 
+<!-- =====================
+     LAYOUT
+===================== -->
 <div class="layout">
+
+  <!-- SIDEBAR -->
   <aside class="sidebar">
-    <a href="./" data-page="home">Home</a>
-    <a href="./events/" data-page="events">Upcoming Events</a>
-    <a href="./notes/" data-page="notes">Notes</a>
-    <a href="./archives/" data-page="archives">Archives</a>
+    <a href="./" class="active">Home</a>
+    <a href="./events/">Upcoming Events</a>
+    <a href="./notes/">Notes</a>
+    <a href="./archives/">Archives</a>
   </aside>
 
+  <!-- MAIN CONTENT -->
   <main class="content">
+    <div class="home-stack">
+
+    <!-- =====================
+         CASA INTRO
+    ===================== -->
     <section class="card">
       <h2>About CASA</h2>
       <p>
-        CO & AN Students Association (CASA) is the official student committee
+        <!-- YOU WILL FILL THIS -->
+        CO & AN Students Association (CASA) is the official student body
         representing the Computer Organization and Computer Networks domain.
-        CASA focuses on academic excellence, collaborative learning, technical
-        events, and student-led initiatives.
+        This platform exists to centralize academic resources, events,
+        archives, and student contributions.
       </p>
     </section>
+
+    <!-- =====================
+         OUR TEACHERS
+    ===================== -->
+    <section class="card">
+      <h2>Our Teachers</h2>
+
+      <div style="
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        margin-top: 20px;
+      ">
+
+        <!-- TEACHER 1 -->
+        <div style="text-align:center;">
+          <img src="./assets/images/teachers/t1.jpg"
+               style="width:100%; border-radius:16px;">
+          <p style="margin-top:10px;">Teacher Name</p>
+        </div>
+
+        <!-- TEACHER 2 -->
+        <div style="text-align:center;">
+          <img src="./assets/images/teachers/t2.jpg"
+               style="width:100%; border-radius:16px;">
+          <p style="margin-top:10px;">Teacher Name</p>
+        </div>
+
+        <!-- TEACHER 3 -->
+        <div style="text-align:center;">
+          <img src="./assets/images/teachers/t3.jpg"
+               style="width:100%; border-radius:16px;">
+          <p style="margin-top:10px;">Teacher Name</p>
+        </div>
+
+        <!-- TEACHER 4 -->
+        <div style="text-align:center;">
+          <img src="./assets/images/teachers/t4.jpg"
+               style="width:100%; border-radius:16px;">
+          <p style="margin-top:10px;">Teacher Name</p>
+        </div>
+
+        <!-- TEACHER 5 -->
+        <div style="text-align:center;">
+          <img src="./assets/images/teachers/t5.jpg"
+               style="width:100%; border-radius:16px;">
+          <p style="margin-top:10px;">Teacher Name</p>
+        </div>
+
+        <!-- TEACHER 6 -->
+        <div style="text-align:center;">
+          <img src="./assets/images/teachers/t6.jpg"
+               style="width:100%; border-radius:16px;">
+          <p style="margin-top:10px;">Teacher Name</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =====================
+         WHAT'S NEW
+    ===================== -->
+    <section class="card">
+      <h2>What’s New</h2>
+
+      <ul style="margin-top:14px; padding-left:18px; line-height:1.8;">
+        <li>New PYQs uploaded for Semester 3</li>
+        <li>Upcoming technical event announced</li>
+        <li>New student artwork added to showcase</li>
+      </ul>
+    </section>
+
+    <!-- =====================
+         SHOWCASE / HIGHLIGHTS
+    ===================== -->
+    
+    <!-- =====================
+     HIGHLIGHTS / IMAGE SLIDER
+===================== -->
+<section class="card">
+  <h2>Highlights</h2>
+  <div class="slider">
+    <img src="https://picsum.photos/id/1015/800/450" class="active" alt="Image 1">
+    <img src="https://picsum.photos/id/1016/800/450" alt="Image 2">
+    <img src="https://picsum.photos/id/1018/800/450" alt="Image 3">
+    <img src="https://picsum.photos/id/1020/800/450" alt="Image 4">
+    <div class="dots"></div>
+  </div>
+
+  <style>
+    /* Fully scoped under .slider */
+    .slider {
+      position: relative;
+      width: 100%;
+      aspect-ratio: 21/9; /* fixed height inside card */
+      overflow: hidden;
+      border-radius: 12px;
+      margin-top: 16px;
+    }
+
+    .slider img {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1s ease-in-out;
+      z-index: 0;
+    }
+
+    .slider img.active {
+      opacity: 1;
+      z-index: 1;
+    }
+
+    .slider .dots {
+      position: absolute;
+      bottom: 12px;
+      width: 100%;
+      text-align: center;
+      z-index: 2;
+    }
+
+    .slider .dot {
+      display: inline-block;
+      width: 12px;
+      height: 12px;
+      margin: 0 6px;
+      background: rgba(255,255,255,0.5);
+      border-radius: 50%;
+      cursor: pointer;
+      transition: background 0.3s;
+    }
+
+    .slider .dot.active {
+      background: white;
+    }
+
+    /* Optional: prevent inherited card hover transforms from affecting images */
+    .card:hover .slider img {
+      transform: none !important;
+    }
+
+    /* Mobile adjustment */
+    @media (max-width: 768px) {
+      .slider {
+        height: 200px;
+      }
+    }
+  </style>
+
+      <script>
+        (function(){
+        const slider = document.querySelector('.slider');
+          const images = slider.querySelectorAll('img');
+          const dotsContainer = slider.querySelector('.dots');
+          let currentIndex = 0;
+          const intervalTime = 3000; // 3s
+
+          // Create dots
+          images.forEach((img, index) => {
+            const dot = document.createElement('span');
+            dot.classList.add('dot');
+            if(index === 0) dot.classList.add('active');
+              dot.addEventListener('click', () => {
+              goToSlide(index);
+              resetInterval();
+            });
+            dotsContainer.appendChild(dot);
+          });
+
+          const dots = dotsContainer.querySelectorAll('.dot');
+
+          function goToSlide(index) {
+            images[currentIndex].classList.remove('active');
+            dots[currentIndex].classList.remove('active');
+            images[index].classList.add('active');
+            dots[index].classList.add('active');
+            currentIndex = index;
+          }
+
+          function nextSlide() {
+            let next = (currentIndex + 1) % images.length;
+            goToSlide(next);
+          }
+
+          let slideInterval = setInterval(nextSlide, intervalTime);
+
+          function resetInterval() {
+            clearInterval(slideInterval);
+            slideInterval = setInterval(nextSlide, intervalTime);
+          }
+        })();
+      </script>
+    </section>
+
+    </div>
   </main>
 </div>
 
 <footer class="fixed-footer">
-  <div class="footer-links">
-    <a href="https://instagram.com/" target="_blank">📸 Instagram</a>
-    <a href="https://linkedin.com/" target="_blank">💼 LinkedIn</a>
-    <a href="mailto:casacoan2526@gmail.com">✉️ casacoan2526@gmail.com</a>
-  </div>
-  <div class="footer-credit">
-    © <span class="full-name">CO & AN Students Association</span>
-    <span class="short-name">CASA</span>
-  </div>
+    <div class="footer-links">
+      <a href="https://instagram.com/" target="_blank">📸 Instagram</a>
+      <a href="https://linkedin.com/" target="_blank">💼 LinkedIn</a>
+      <a href="mailto:casacoan2526@gmail.com">✉️ casacoan2526@gmail.com</a>
+    </div>
+    <div class="footer-credit">
+      © <span class="full-name">CO & AN Students Association</span>
+      <span class="short-name">CASA</span>
+    </div>
 </footer>
 
+<!-- GLOBAL JS -->
 <script src="./assets/js/script.js"></script>
+
 </body>
 </html>
