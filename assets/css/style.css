@@ -310,4 +310,13 @@ body {
   .fixed-footer {
     padding: 0 14px;
   }
+
+  .content {
+    flex: 1;
+    padding: 36px;
+    padding-bottom: 90px; /* footer offset */
+    margin-left: 0px;
+    height: calc(100vh - 72px);
+    overflow-y: auto;
+  }
 }
