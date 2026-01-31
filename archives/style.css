@@ -1,20 +1,9 @@
 /* =====================
-   ARCHIVES LAYOUT
-===================== */
-
-.archives {
-  display: flex;
-  flex-direction: column;
-  gap: 24px;
-}
-
-/* =====================
    ARCHIVE CARD
 ===================== */
 
 .archive-card {
   border-radius: 20px;
-  overflow: hidden;
 }
 
 /* =====================
