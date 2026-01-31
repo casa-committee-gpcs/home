@@ -58,6 +58,10 @@
   /* ===== Misc ===== */
   --dot-inactive: grey;
   --dot-active: black;
+
+  /* ===== Search / Match Highlights ===== */
+  --search-match-soft: rgba(0, 94, 255, 0.18);
+  --search-match-strong: rgba(0, 94, 255, 0.25);
 }
 
 /* =====================
@@ -120,6 +124,10 @@ body.dark {
   /* ===== Misc ===== */
   --dot-inactive: #6b7280;
   --dot-active: #e5e7eb;
+  
+  /* ===== Search & Highlight ===== */
+  --search-match-soft: rgba(120, 180, 255, 0.22);
+  --search-match-strong: rgba(120, 180, 255, 0.32);
 }
 
 * {
