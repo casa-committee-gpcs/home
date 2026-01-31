@@ -2,6 +2,126 @@
    BASE RESET
 ===================== */
 
+:root {
+  /* ===== Backgrounds ===== */
+  --bg-page-1: #eef5ff;
+  --bg-page-2: #dde9ff;
+  --bg-page-main: #f5f9ff;
+  --bg-page-alt: #edf3ff;
+
+  --bg-header-1: #90e0ef;
+  --bg-header-2: #eaf2ff;
+  --bg-header-3: #00B4DE;
+
+  --bg-sidebar-1: #003f99;
+  --bg-sidebar-2: #002b66;
+
+  --bg-glass-light: rgba(255,255,255,0.65);
+  --bg-glass-medium: rgba(255,255,255,0.75);
+  --bg-glass-strong: rgba(255,255,255,0.85);
+  --bg-glass-blue: rgba(240,247,255,0.85);
+  --bg-glass-footer: rgba(230,240,255,0.85);
+  --border-glass: rgba(255,255,255,0.35);
+  --highlight-glass: rgba(255,255,255,0.7);
+
+  --bg-active-soft: #dbeaff;
+  --bg-active-alt: #edf4ff;
+  --bg-white: #ffffff;
+
+  /* ===== Text ===== */
+  --text-primary: #003366;
+  --text-body: #1f2933;
+  --text-muted: #374151;
+  --text-inverse: #ffffff;
+  --text-sidebar: #e6f0ff;
+
+  /* ===== Accents ===== */
+  --accent-main: #005eff;
+  --accent-soft: #2aa3ff;
+
+  --hover-blue-soft: rgba(0,90,200,0.12);
+  --hover-white-soft: rgba(255,255,255,0.15);
+
+  /* ===== Shadows ===== */
+  --shadow-black-soft: rgba(0,0,0,0.08);
+  --shadow-black: rgba(0,0,0,0.12);
+  --shadow-black-strong: rgba(0,0,0,0.18);
+
+  --shadow-blue-soft: rgba(0,60,150,0.15);
+  --shadow-blue-mid: rgba(0,60,150,0.18);
+  --shadow-blue: rgba(0,90,200,0.25);
+  --shadow-blue-semi: rgba(0,90,200,0.15);
+  --shadow-blue-strong: rgba(0,80,200,0.3);
+  --shadow-blue-glow: rgba(60,140,255,0.35);
+  --shadow-blue-active: rgba(0,94,255,0.5);
+
+  /* ===== Misc ===== */
+  --dot-inactive: grey;
+  --dot-active: black;
+}
+
+/* =====================
+   DARK MODE OVERRIDES
+===================== */
+
+body.dark {
+  /* ===== Backgrounds ===== */
+  --bg-page-1: #0b1220;
+  --bg-page-2: #0f172a;
+  --bg-page-main: #0b1220;
+  --bg-page-alt: #111827;
+
+  --bg-header-1: #020617;
+  --bg-header-2: #020617;
+  --bg-header-3: #020617;
+
+  --bg-sidebar-1: #020617;
+  --bg-sidebar-2: #020617;
+
+  --bg-glass-light: rgba(17,24,39,0.65);
+  --bg-glass-medium: rgba(17,24,39,0.75);
+  --bg-glass-strong: rgba(17,24,39,0.85);
+  --bg-glass-blue: rgba(15,23,42,0.85);
+  --bg-glass-footer: rgba(17,24,39,0.85);
+  --border-glass: rgba(255,255,255,0.08);
+  --highlight-glass: rgba(255,255,255,0.05);
+
+  --bg-active-soft: #1e293b;
+  --bg-active-alt: #0f172a;
+  --bg-white: #020617;
+
+  /* ===== Text ===== */
+  --text-primary: #e5e7eb;
+  --text-body: #e5e7eb;
+  --text-muted: #9ca3af;
+  --text-inverse: #020617;
+  --text-sidebar: #e5e7eb;
+
+  /* ===== Accents ===== */
+  --accent-main: #60a5fa;
+  --accent-soft: #3b82f6;
+
+  --hover-blue-soft: rgba(96,165,250,0.18);
+  --hover-white-soft: rgba(255,255,255,0.08);
+
+  /* ===== Shadows ===== */
+  --shadow-black-soft: rgba(0,0,0,0.4);
+  --shadow-black: rgba(0,0,0,0.6);
+  --shadow-black-strong: rgba(0,0,0,0.8);
+
+  --shadow-blue-soft: rgba(96,165,250,0.15);
+  --shadow-blue-mid: rgba(96,165,250,0.18);
+  --shadow-blue: rgba(96,165,250,0.35);
+  --shadow-blue-semi: rgba(96,165,250,0.25);
+  --shadow-blue-strong: rgba(96,165,250,0.45);
+  --shadow-blue-glow: rgba(96,165,250,0.45);
+  --shadow-blue-active: rgba(96,165,250,0.6);
+
+  /* ===== Misc ===== */
+  --dot-inactive: #6b7280;
+  --dot-active: #e5e7eb;
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -11,10 +131,10 @@
 
 body {
   background:
-    radial-gradient(circle at top left, #eef5ff, transparent 60%),
-    radial-gradient(circle at bottom right, #dde9ff, transparent 55%),
-    linear-gradient(135deg, #f5f9ff, #edf3ff);
-  color: #1f2933;
+    radial-gradient(circle at top left, var(--bg-page-1), transparent 60%),
+    radial-gradient(circle at bottom right, var(--bg-page-2), transparent 55%),
+    linear-gradient(135deg, var(--bg-page-main), var(--bg-page-alt));
+  color: var(--text-body);
   overflow-x: hidden;
   overflow-y: hidden;
 }
@@ -30,13 +150,13 @@ body {
   padding: 14px 28px;
   background: linear-gradient(
     270deg,
-    #90e0ef,
-    #eaf2ff,
-    #00B4DE
+    var(--bg-header-1),
+    var(--bg-header-2),
+    var(--bg-header-3)
   );
   background-size: 500% 500%;
   animation: headerPulse 8s ease-in-out infinite;
-  box-shadow: 0 6px 22px rgba(0, 60, 150, 0.15);
+  box-shadow: 0 6px 22px var(--shadow-blue-soft);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -55,7 +175,7 @@ body {
 .site-title {
   font-size: 1.35rem;
   font-weight: 600;
-  color: #003366;
+  color: var(--text-primary);
   letter-spacing: 0.4px;
   text-align: center;
 }
@@ -75,7 +195,7 @@ body {
 
 .sidebar {
   width: 240px;
-  background: linear-gradient(180deg, #003f99, #002b66);
+  background: linear-gradient(180deg, var(--bg-sidebar-1), var(--bg-sidebar-2));
   padding: 22px 18px;
   display: flex;
   flex-direction: column;
@@ -88,7 +208,7 @@ body {
 }
 
 .sidebar a {
-  color: #e6f0ff;
+  color: var(--text-sidebar);
   text-decoration: none;
   padding: 12px 18px;
   border-radius: 12px;
@@ -96,15 +216,15 @@ body {
 }
 
 .sidebar a:hover {
-  background: rgba(255,255,255,0.15);
+  background: var(--hover-white-soft);
   transform: translateX(6px);
 }
 
 .sidebar a.active {
-  background: linear-gradient(135deg, #2aa3ff, #005eff);
-  color: #ffffff;
+  background: linear-gradient(135deg, var(--accent-soft), var(--accent-main));
+  color: var(--text-inverse);
   transform: translateX(10px);
-  box-shadow: 0 8px 24px rgba(0, 94, 255, 0.55);
+  box-shadow: 0 8px 24px var(--shadow-blue-active);
 }
 
 /* =====================
@@ -139,15 +259,15 @@ body {
 ===================== */
 
 .card {
-  background: rgba(255, 255, 255, 0.65);
+  background: var(--bg-glass-light);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   padding: 30px;
   border-radius: 20px;
-  border: 1px solid rgba(255,255,255,0.35);
+  border: 1px solid var(--border-glass);
   box-shadow:
-    0 20px 45px rgba(0, 0, 0, 0.12),
-    inset 0 1px 0 rgba(255,255,255,0.7);
+    0 20px 45px var(--shadow-black),
+    inset 0 1px 0 var(--highlight-glass);
   transition: all 0.35s ease;
   animation: cardFade 0.6s ease forwards;
 }
@@ -166,18 +286,18 @@ body {
 .card:hover {
   transform: translateY(-10px) scale(1.02);
   box-shadow:
-    0 30px 70px rgba(0, 90, 200, 0.25),
-    0 0 22px rgba(60, 140, 255, 0.35);
+    0 30px 70px var(--shadow-blue),
+    0 0 22px var(--shadow-blue-glow);
 }
 
 .card h2 {
   margin-bottom: 16px;
-  color: #003366;
+  color: var(--text-primary);
 }
 
 .card p {
   line-height: 1.65;
-  color: #374151;
+  color: var(--text-muted);
 }
 
 /* =====================
@@ -207,13 +327,13 @@ body {
   padding: 0 20px;
   background: linear-gradient(
     135deg,
-    rgba(255,255,255,0.85),
-    rgba(230,240,255,0.85)
+    var(--bg-glass-strong),
+    var(--bg-glass-footer)
   );
 
   backdrop-filter: blur(14px);
-  border-top: 1px solid rgba(0,0,0,0.08);
-  box-shadow: 0 -8px 30px rgba(0,60,150,0.18);
+  border-top: 1px solid var(--shadow-black-soft);
+  box-shadow: 0 -8px 30px var(--shadow-blue-mid);
 
   z-index: 200;
 }
@@ -232,17 +352,17 @@ body {
 .footer-links a {
   text-decoration: none;
   font-size: 0.95rem;
-  color: #003366;
+  color: var(--text-primary);
   font-weight: 500;
 }
 
 .footer-links a:hover {
-  color: #005eff;
+  color: var(--accent-main);
 }
 
 .footer-credit {
   font-size: 0.85rem;
-  color: #374151;
+  color: var(--text-muted);
 }
 
 .short-name {
@@ -319,4 +439,47 @@ body {
     height: calc(100vh - 72px);
     overflow-y: auto;
   }
+
+  .theme-plateau {
+    left: 12px;
+    top: -26px;
+  }
+}
+
+/* =====================
+   THEME TOGGLE (PLATEAU)
+===================== */
+
+.theme-plateau {
+  position: absolute;
+  left: 18px;
+  top: -28px; /* 👈 lifts above 56px footer */
+  z-index: 300;
+}
+
+#theme-toggle {
+  width: 80px;
+  height: 35px;
+  border-radius: 12px;
+  border: none;
+
+  background: var(--bg-glass-strong);
+  backdrop-filter: blur(12px);
+
+  box-shadow:
+    0 10px 25px var(--shadow-blue-mid),
+    inset 0 1px 0 var(--highlight-glass);
+
+  color: var(--text-muted);
+  font-size: 1.0rem;
+  cursor: pointer;
+
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+#theme-toggle:hover {
+  transform: translateY(-3px);
+  box-shadow:
+    0 16px 40px var(--shadow-blue),
+    inset 0 1px 0 var(--highlight-glass);
 }

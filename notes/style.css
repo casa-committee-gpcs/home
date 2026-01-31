@@ -30,11 +30,11 @@
   font-size: 1.15rem;
   font-weight: 600;
 
-  background: rgba(255,255,255,0.75);
+  background: var(--bg-glass-medium);
   backdrop-filter: blur(14px);
 
   border-radius: 20px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  box-shadow: 0 12px 30px var(--shadow-black);
 
   cursor: pointer;
   transition: all 0.35s ease;
@@ -42,12 +42,12 @@
 
 .notes-header:hover {
   transform: translateY(-2px);
-  box-shadow: 0 18px 40px rgba(0,90,200,0.25);
+  box-shadow: 0 18px 40px var(--shadow-blue);
 }
 
 .notes-card.active > .notes-header {
-  background: linear-gradient(135deg, #dbeaff, #f5f9ff);
-  box-shadow: 0 22px 55px rgba(0,80,200,0.3);
+  background: linear-gradient(135deg, var(--bg-active-soft), var(--bg-page-main));
+  box-shadow: 0 22px 55px var(--shadow-blue-strong);
 }
 
 /* =====================
@@ -71,7 +71,7 @@
   max-height: 0;
   overflow: hidden;
   padding: 0 28px;
-  background: rgba(240,247,255,0.85);
+  background: var(--bg-glass-blue);
   transition: max-height 0.6s ease, padding 0.4s ease;
 }
 
@@ -86,11 +86,11 @@
 
 .notes-card.inner .notes-header {
   font-size: 1.05rem;
-  background: rgba(255,255,255,0.65);
+  background: var(--bg-glass-light);
 }
 
 .notes-card.inner.active > .notes-header {
-  background: linear-gradient(135deg, #edf4ff, #ffffff);
+  background: linear-gradient(135deg, var(--bg-active-alt), var(--text-inverse));
 }
 
 /* =====================
@@ -111,16 +111,16 @@
   padding: 8px 14px;
   border-radius: 10px;
   text-decoration: none;
-  color: #003366;
+  color: var(--text-primary);
   font-weight: 500;
   transition: all 0.25s ease;
 }
 
 .subject-list a:hover,
 .pyq-list a:hover {
-  background: rgba(0,90,200,0.12);
-  color: #005eff;
-  box-shadow: 0 0 0 2px rgba(0,90,200,0.15);
+  background: var(--hover-blue-soft);
+  color: var(--accent-main);
+  box-shadow: 0 0 0 2px var(--shadow-blue-semi);
 }
 
 /* =====================

@@ -14,22 +14,22 @@
   padding: 22px 28px;
   font-size: 1.2rem;
   font-weight: 600;
-  background: rgba(255,255,255,0.75);
+  background: var(--bg-glass-medium);
   backdrop-filter: blur(14px);
   border-radius: 20px;
-  box-shadow: 0 12px 30px rgba(0,0,0,0.12);
+  box-shadow: 0 12px 30px var(--shadow-black);
   cursor: pointer;
   transition: all 0.35s ease;
 }
 
 .archive-header:hover {
   transform: translateY(-2px);
-  box-shadow: 0 18px 40px rgba(0,90,200,0.25);
+  box-shadow: 0 18px 40px var(--shadow-blue);
 }
 
 .archive-card.active .archive-header {
-  background: linear-gradient(135deg, #dbeaff, #f5f9ff);
-  box-shadow: 0 22px 55px rgba(0,80,200,0.3);
+  background: linear-gradient(135deg, var(--bg-active-soft), var(--bg-page-main));
+  box-shadow: 0 22px 55px var(--shadow-blue-strong);
 }
 
 /* =====================
@@ -40,7 +40,7 @@
   max-height: 0;
   overflow: hidden;
   padding: 0 28px;
-  background: rgba(240,247,255,0.85);
+  background: var(--bg-glass-blue);
   transition: max-height 0.6s ease, padding 0.4s ease;
 }
 
@@ -67,23 +67,23 @@
   padding: 6px 10px;
   border-radius: 8px;
   text-decoration: none;
-  color: #003366;
+  color: var(--text-primary);
   font-weight: 500;
   transition: background 0.25s ease, color 0.25s ease, box-shadow 0.25s ease;
 }
 
 /* Hover (ONLY while hovering) */
 .archive-content a:hover {
-  background: rgba(0,90,200,0.12);
-  color: #005eff;
-  box-shadow: 0 0 0 2px rgba(0,90,200,0.15);
+  background: var(--hover-blue-soft);
+  color: var(--accent-main);
+  box-shadow: 0 0 0 2px var(--shadow-blue-semi);
 }
 
 /* Click feedback (TEMPORARY) */
 .archive-content a.clicked {
-  background: linear-gradient(135deg, #2aa3ff, #005eff);
-  color: #ffffff;
-  box-shadow: 0 6px 18px rgba(0,94,255,0.5);
+  background: linear-gradient(135deg, var(--accent-soft), var(--accent-main));
+  color: var(--text-inverse);
+  box-shadow: 0 6px 18px var(--shadow-blue-active);
 }
 
 /* =====================
@@ -92,14 +92,14 @@
 
 .archive-content.history h4 {
   margin: 20px 0 10px;
-  color: #003366;
+  color: var(--text-primary);
 }
 
 .archive-content.history img {
   width: 100%;
   border-radius: 16px;
   margin-bottom: 18px;
-  box-shadow: 0 14px 40px rgba(0,0,0,0.18);
+  box-shadow: 0 14px 40px var(--shadow-black-strong);
 }
 
 /* =====================
